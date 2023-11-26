@@ -6,7 +6,13 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 });
 
-console.log(mongoose.connect);
+mongoose.connection.on("connected", () => {
+  console.log("Connected to MongoDB Atlas");
+});
+
+mongoose.connection.on("error", (err) => {
+  console.error("MongoDB connection error:", err);
+});
 
 const personSchema = new mongoose.Schema({
   name: {
