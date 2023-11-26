@@ -26,12 +26,26 @@ const createAndSavePerson = (done) => {
     favoriteFoods: ["rajma-dal", "pizza", "fish"],
   });
   burhaann.save(function (err, data) {
+    if (err) {
+      console.log(err);
+    }
     done(null, data);
   });
 };
 
+const arrayOfPeople = [
+  { name: "Burhaann", age: 28, favoriteFoods: ["rajma-dal", "pizza", "fish"] },
+  { name: "Moin", age: 27, favoriteFoods: ["chicken", "pizza", "meat"] },
+  { name: "Arhaann", age: 26, favoriteFoods: ["meat", "chicken"] },
+];
+
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+  Person.create(arrayOfPeople, function (err, data) {
+    if (err) {
+      console.log(err);
+    }
+    done(null, data);
+  });
 };
 
 const findPeopleByName = (personName, done) => {
