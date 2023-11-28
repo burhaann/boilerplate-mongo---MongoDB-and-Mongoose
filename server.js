@@ -263,6 +263,7 @@ router.post("/find-one-update", function (req, res, next) {
           console.log("Missing `done()` argument");
           return next({ message: "Missing callback argument" });
         }
+        console.log(data);
         res.json(data);
         p.remove();
       });
