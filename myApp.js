@@ -34,14 +34,14 @@ const createAndSavePerson = (done) => {
     age: 27,
     favoriteFoods: ["rajma-dal", "pizza", "fish"],
   });
-  burhaann.save(function (err, data) {
-    console.log("------3");
-
-    if (err) {
-      console.log(err);
-    }
-    done(null, data);
-  });
+  burhaann
+    .save()
+    .then((data) => {
+      done(null, data);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 };
 
 console.log("------4");
