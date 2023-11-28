@@ -90,14 +90,14 @@ const findPersonById = (personId, done) => {
 
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
-  Person.findById({ _id: personId }, function (err, person) {
-    person.favoriteFoods.push(foodToAdd);
+  Person.findById({ _id: personId }, function (err, data) {
+    data.favoriteFoods.push(foodToAdd);
     if (err) {
       console.log(err);
     }
-    data.save(function (err, updatedData) {
+    data.save(function (err, data) {
       if (err) return console.log(err);
-      done(null, updatedData);
+      done(null, data);
     });
   });
 };
