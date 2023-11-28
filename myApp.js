@@ -95,9 +95,9 @@ const findEditThenSave = (personId, done) => {
     if (err) {
       console.log(err);
     }
-    data.save(function (err, data) {
+    data.save(function (err, person) {
       if (err) return console.log(err);
-      done(null, data);
+      done(null, person);
     });
   });
 };
