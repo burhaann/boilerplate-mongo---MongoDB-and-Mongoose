@@ -27,7 +27,7 @@ let Person;
 
 Person = mongoose.model("Person", personSchema);
 console.log("------1");
-
+createAndSavePerson();
 const createAndSavePerson = (done) => {
   console.log("------2");
   const burhaann = new Person({
@@ -44,15 +44,20 @@ const createAndSavePerson = (done) => {
     done(null, data);
   });
 };
+console.log("------4");
 
 const arrayOfPeople = [
   { name: "Basit", age: 28, favoriteFoods: ["rajma-dal", "pizza", "fish"] },
   { name: "Moin", age: 27, favoriteFoods: ["chicken", "pizza", "meat"] },
   { name: "Arhaann", age: 26, favoriteFoods: ["meat", "chicken"] },
 ];
-
+createManyPeople();
 const createManyPeople = (arrayOfPeople, done) => {
+  console.log("------5");
+
   Person.create(arrayOfPeople, function (err, data) {
+    console.log("------6");
+
     if (err) {
       console.log(err);
     }
