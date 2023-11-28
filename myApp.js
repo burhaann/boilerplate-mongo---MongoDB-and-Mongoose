@@ -133,8 +133,19 @@ const removeManyPeople = (done) => {
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
-
-  done(null /*, data*/);
+  var query = Person.find(
+    { favoriteFoods: foodToSearch },
+    function (err, data) {
+      if (err) return console.log(err);
+    }
+  )
+    .sort("name")
+    .limit(1)
+    .select("-favoriteFoods")
+    .exec(function (err, data) {
+      if (err) return console.log(err);
+      done(null, data);
+    });
 };
 
 /** **Well Done !!**
