@@ -26,14 +26,18 @@ const personSchema = new mongoose.Schema({
 let Person;
 
 Person = mongoose.model("Person", personSchema);
+console.log("------1");
 
 const createAndSavePerson = (done) => {
+  console.log("------2");
   const burhaann = new Person({
     name: "burhaann",
     age: 27,
     favoriteFoods: ["rajma-dal", "pizza", "fish"],
   });
   burhaann.save(function (err, data) {
+    console.log("------3");
+
     if (err) {
       console.log(err);
     }
