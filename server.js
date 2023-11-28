@@ -182,7 +182,7 @@ router.post("/find-one-by-food", function (req, res, next) {
       }
       console.log(data);
       res.json(data);
-      // p.remove();
+      p.remove();
     });
   });
 });
