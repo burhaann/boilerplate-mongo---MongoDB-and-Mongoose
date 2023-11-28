@@ -353,7 +353,7 @@ router.post("/remove-many-people", function (req, res, next) {
                 return next(e);
               }
             }
-            console.log(res.json);
+            console.log(data);
             res.json({
               n: data.n,
               count: cnt,
