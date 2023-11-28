@@ -51,7 +51,7 @@ var arrayOfPeople = [
   { name: "Moin Khan", age: 27, favoriteFoods: ["chicken", "pizza", "meat"] },
   { name: "Arhaann", age: 26, favoriteFoods: ["meat", "chicken"] },
 ];
-const createManyPeople = (arrayOfPeople, done) => {
+var createManyPeople = (arrayOfPeople, done) => {
   console.log("------5");
 
   Person.create(arrayOfPeople, function (err, data) {
