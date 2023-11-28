@@ -172,9 +172,9 @@ router.post("/find-one-by-food", function (req, res, next) {
     if (err) {
       return next(err);
     }
-    console.log(data);
 
     findByFood(pers.favoriteFoods[0], function (err, data) {
+      console.log("sexxo");
       console.log(data);
       console.log(pers.favoriteFoods[0]);
 
