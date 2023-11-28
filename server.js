@@ -327,6 +327,7 @@ router.post("/remove-many-people", function (req, res, next) {
       next({ message: "timeout" });
     }, TIMEOUT);
     Person.create(req.body, function (err, pers) {
+      console.log(req.body);
       if (err) {
         return next(err);
       }
@@ -353,7 +354,11 @@ router.post("/remove-many-people", function (req, res, next) {
                 return next(e);
               }
             }
-            console.log(data);
+            console.log({
+              n: data.n,
+              count: cnt,
+              ok: data.ok,
+            });
             res.json({
               n: data.n,
               count: cnt,
