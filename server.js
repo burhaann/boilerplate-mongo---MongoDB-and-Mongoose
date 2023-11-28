@@ -180,7 +180,7 @@ router.post("/find-one-by-food", function (req, res, next) {
         return next({ message: "Missing callback argument" });
       }
       res.json(data);
-      p.remove();
+      // p.remove();
     });
   });
 });
@@ -205,7 +205,7 @@ router.get("/find-by-id", function (req, res, next) {
         return next({ message: "Missing callback argument" });
       }
       res.json(data);
-      p.remove();
+      // p.remove();
     });
   });
 });
@@ -231,7 +231,7 @@ router.post("/find-edit-save", function (req, res, next) {
           return next({ message: "Missing callback argument" });
         }
         res.json(data);
-        p.remove();
+        // p.remove();
       });
     } catch (e) {
       console.log(e);
@@ -261,7 +261,7 @@ router.post("/find-one-update", function (req, res, next) {
           return next({ message: "Missing callback argument" });
         }
         res.json(data);
-        p.remove();
+        // p.remove();
       });
     } catch (e) {
       console.log(e);
