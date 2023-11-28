@@ -167,17 +167,12 @@ router.post("/find-one-by-food", function (req, res, next) {
     next({ message: "timeout" });
   }, TIMEOUT);
   let p = new Person(req.body);
-  console.log(req.body);
   p.save(function (err, pers) {
     if (err) {
       return next(err);
     }
 
     findByFood(pers.favoriteFoods[0], function (err, data) {
-      console.log("sexxo");
-      console.log(data);
-      console.log(pers.favoriteFoods[0]);
-
       clearTimeout(t);
       if (err) {
         return next(err);
@@ -186,7 +181,6 @@ router.post("/find-one-by-food", function (req, res, next) {
         console.log("Missing `done()` argument");
         return next({ message: "Missing callback argument" });
       }
-      console.log(data);
       res.json(data);
       p.remove();
     });
