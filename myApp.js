@@ -46,14 +46,14 @@ const createAndSavePerson = (done) => {
 
 console.log("------4");
 
-var createManyPeople = (arrayOfPeople, done) => {
-  var arrayOfPeople = [
-    { name: "Basit", age: 28, favoriteFoods: ["rajma-dal", "pizza", "fish"] },
-    { name: "Moin Khan", age: 27, favoriteFoods: ["chicken", "pizza", "meat"] },
-    { name: "Arhaann", age: 26, favoriteFoods: ["meat", "chicken"] },
-  ];
+var arrayPeople = [
+  { name: "Basit", age: 28, favoriteFoods: ["rajma-dal", "pizza", "fish"] },
+  { name: "Moin Khan", age: 27, favoriteFoods: ["chicken", "pizza", "meat"] },
+  { name: "Arhaann", age: 26, favoriteFoods: ["meat", "chicken"] },
+];
+const createManyPeople = (arrayOfPeople, done) => {
   console.log("------5");
-
+  arrayOfPeople = arrayPeople;
   Person.create(arrayOfPeople, function (err, data) {
     console.log("------6");
 
