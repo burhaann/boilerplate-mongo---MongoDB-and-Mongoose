@@ -43,7 +43,7 @@ const createAndSavePerson = (done) => {
     done(null, data);
   });
 };
-createAndSavePerson();
+
 console.log("------4");
 
 const arrayOfPeople = [
@@ -63,7 +63,6 @@ const createManyPeople = (arrayOfPeople, done) => {
     done(null, data);
   });
 };
-createManyPeople();
 
 const findPeopleByName = (personName, done) => {
   Person.find({ name: personName }, function (err, personFound) {
